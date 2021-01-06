@@ -1,5 +1,8 @@
 # Running on the Path Less Traveled: Examining the Emergence and Evaluation of Unconventional Female Candidates
 
+This repository contains selected data and code from my Senior Honors Thesis (Miami University '20).
+
+## Abstract
 A record number of women were elected to the U.S. Congress in 2018 (CAWP 2019).
 Many of the newly elected women took more unconventional and varied paths to elective office
 than their male counterparts. Understanding the emergence of women as candidates and voters’
@@ -10,5 +13,10 @@ Representatives in 2018 paired with district-level data to find that candidate e
 extent, dependent on both candidate gender and pathway to office. Next, I use a survey
 experiment to find that voters base their evaluations and preferences primarily on a candidate’s
 occupational background, rather than a candidate’s gender.
+
+
+## Methods
+
+
 
 
