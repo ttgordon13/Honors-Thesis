@@ -1,9 +1,7 @@
+##### Clean main data 
+
 ##### Rename columns and filter data set
 Experiment <- Experiment_data[-c(1),]
-table(Experiment_data$MC_position)
-186/473
-186+287
-
 library(tidyverse)
 Experiment <- Experiment %>%
   mutate(Type = as.numeric(`Response Type`),
@@ -64,18 +62,12 @@ Experiment <- Experiment %>%
   filter(Type == 0, Participate == 1, Citizen_0 == 1, Citizen == 1)
 
 
-##### Manipulation check
+##### Manipulation check - check how participants answered manipulation check (correct gender, occupation, etc)
 table(Experiment$MC_gend)
-54 + 24
-
 table(Experiment$MC_Recognize)
 Experiment$MC_Recognize_open ## only a few ppl actually get it right
 
-Experiment <- Experiment %>%
-  filter(MC_pos == 1 | MC_pos == 2) 
-#Experiment_test <- Experiment %>%
-  #mutate(MC_gend = ifelse(Condition == "Manipulation1" & MC_gend == 1, 1, 3)) %>%
-  #filter(MC_gend < 3)
+#### Filter to only those participants who pass manipulation check
 
 ##### Manipulations
   ### 1 = male attorney
@@ -83,50 +75,23 @@ Experiment <- Experiment %>%
   ### 3 = male veterinarian
   ### 4 = female veterinarian
 
-table(Experiment$MC_pos)
-
 Manip_1 <- Experiment %>%
   filter(Condition == "Manipulation1")
-table(Manip_1$MC_gend)
-table(Manip_1$MC_occup)
-3+3+15+5+1
-#table(Manip_1$MC_gend)
-#table(Manip_1$MC_occup)
-#table(Manip_1$Conventionality_0)
 Manip_1 <- Manip_1 %>%
   filter(MC_gend == 1, MC_occup == 1) #, Conventionality_0 > 3)
 
 Manip_2 <- Experiment %>%
   filter(Condition == "Manipulation2")
-table(Manip_2$MC_gend)
-table(Manip_2$MC_occup)
-1+3+15
-#table(Manip_2$MC_gend)
-#table(Manip_2$MC_occup)
-#table(Manip_2$Conventionality_0)
 Manip_2 <- Manip_2 %>%
   filter(MC_gend == 2, MC_occup == 1) #, Conventionality_0 > 3)
 
 Manip_3 <- Experiment %>%
   filter(Condition == "Manipulation3")
-table(Manip_3$MC_gend)
-table(Manip_3$MC_occup)
-9+8+9
-#table(Manip_3$MC_gend)
-#table(Manip_3$MC_occup)
-#table(Manip_3$Conventionality_0)
 Manip_3 <- Manip_3 %>%
   filter(MC_gend == 1, MC_occup == 2)# , Conventionality_0 < 5)
 
 Manip_4 <- Experiment %>%
   filter(Condition == "Manipulation4")
-table(Manip_4$MC_gend)
-table(Manip_4$MC_occup)
-20+7+10
-37+26+19+27
-#table(Manip_4$MC_gend)
-#table(Manip_4$MC_occup)
-#table(Manip_4$Conventionality_0)
 Manip_4 <- Manip_4 %>%
   filter(MC_gend == 2, MC_occup == 2) #, Conventionality_0 < 5)
 
@@ -135,7 +100,6 @@ Manip_4 <- Manip_4 %>%
 ### Merge conditions back together
 Experiment <- rbind(Manip_1, Manip_2, Manip_3, Manip_4)
 
-
 ### Re-coding values
 Experiment$Sexism_5_RC <- as.numeric(recode(Experiment$Sexism_5, 
                           '1'='7','2'='6','3'='5','4'='4','5'='3','6'='2','7'='1'))
@@ -143,7 +107,6 @@ Experiment$Sexism_6_RC <- as.numeric(recode(Experiment$Sexism_6,
                                             '1'='7','2'='6','3'='5','4'='4','5'='3','6'='2','7'='1'))
 Experiment$Gender_2 <- as.numeric(recode(Experiment$Gender_2, '1'='0','2'='1'))
 
-Experiment$
 
 ### Creating scales for DVs
 Experiment <- Experiment %>%
@@ -154,7 +117,6 @@ Experiment <- Experiment %>%
          Elect_scale = (Primary + General)/2,
          Support_scale = (Vote + Donate + Telling_friend + Volunteer)/4)
 
-Experiment$su
 
 # gender: 0 = men, 1 = women; occupation: 0 = conv, 1 = unconv
 Experiment$Cond_Gender <- as.numeric(recode(Experiment$MC_gend, '1'='0','2'='1'))
