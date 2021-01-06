@@ -1,3 +1,5 @@
+#### RUN ANALYSIS OF VARIANCE FOR KEY DEPENDENT VARIABLES AGAINST CONDITION AND PERTINENT COVARIATES
+
 ## Test attributes ~ CONDITION ONLY
 summary(aov(Likeable ~ Condition, data=Experiment))
 summary(aov(Pleasant ~ Condition, data=Experiment))
