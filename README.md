@@ -15,9 +15,8 @@ experiment to find that voters base their evaluations and preferences primarily 
 occupational background, rather than a candidate’s gender.
 
 
-## Methods
-Observational Methods
-Data collection
+## Observational Methods
+#### Data collection
 To study the emergence of unconventional female candidates, I conduct an observational
 analysis of the major party candidates in the 2018 U.S. House of Representatives primary and
 general elections using an original data set. Each candidate’s name, congressional district,
