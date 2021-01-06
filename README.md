@@ -1,6 +1,6 @@
 # Running on the Path Less Traveled: Examining the Emergence and Evaluation of Unconventional Female Candidates
 
-This repository contains selected data and code from my Senior Honors Thesis (Miami University '20).
+This repository contains selected data and code from my Honors Thesis. I completed this project during my Senior year at Miami University (2019-2020). The project was fully-funded by the Dean's Scholar Award, which I earned in April of 2019. I have included excerpts from the paper to provide additional context below. The full paper can be found here: https://drive.google.com/file/d/1k5-CioFOQdjn8alh0ftomZWZoWVB51jY/view?usp=sharing
 
 ## Abstract
 A record number of women were elected to the U.S. Congress in 2018 (CAWP 2019).
